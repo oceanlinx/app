@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OceanLinx</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+            color: #333;
+        }
+
+        header {
+            background-color: #185494;
+            padding: 10px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+        }
+
+        nav a, .buttons a {
+            margin: 0 15px;
+            color: #FFFFFF;
+            text-decoration: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        .buttons a {
+            background-color: #0056b3;
+            color: #FFFFFF;
+            transition: background-color 0.3s;
+        }
+
+        .buttons a:hover {
+            background-color: #0056b3;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 50px 5%;
+            background-color: #eee;
+        }
+
+        .hero h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.1em;
+            max-width: 600px;
+            margin: 20px auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .cta-buttons a {
+            padding: 10px 20px;
+            border-radius: 5px;
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        .learn-more {
+            background-color: #FFFFFF;
+            transition: background-color 0.3s;
+        }
+
+        .sign-up {
+            background-color: #FFFFFF;
+            transition: background-color 0.3s;
+        }
+
+        .learn-more:hover {
+            background-color: #FFFFFF;
+        }
+
+        .sign-up:hover {
+            background-color: #FFFFFF;
+        }
+
+        .section {
+            padding: 50px 5%;
+        }
+
+        .section h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .section p {
+            font-size: 1.1em;
+            max-width: 600px;
+            margin: 20px auto;
+            justify-content: right;
+        }
+
+        .image-placeholder {
+            width: 300px;
+            height: 200px;
+            background-color: #ccc;
+            margin: 20px auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .image-placeholder img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+        .logo img {
+            max-width: 100px;  /* Anciennement 150px, réduit pour être plus petit */
+            max-height: 50px; /* Anciennement 50px, réduit pour être plus petit */
+        }
+        .flex-container {
+            display: flex;  /* Transforme la div en conteneur flex */
+            justify-content: space-between;  /* Espace les éléments à l'intérieur du conteneur flex */
+            align-items: center;  /* Centre les éléments verticalement */
+        }
+
+        .content {
+        flex: 1;  /* Donne à l'élément un facteur de croissance flex de 1, ce qui lui permet de prendre de l'espace disponible */
+        padding-right: 20px;  /* Ajoute un peu d'espace à droite du contenu pour l'éloigner de l'image */
+        }
+
+        .image-placeholder {
+          flex: 1;  /* Donne à l'élément un facteur de croissance flex de 1, ce qui lui permet de prendre de l'espace disponible */
+         /* Vous pouvez ajuster la largeur ou ajouter d'autres styles si nécessaire */
+        }
+        .main-section {
+            background-image: url('shipping.jpeg'); /* Remplacez par le chemin de votre image */
+            background-size: cover;
+            background-position: center;
+            color: #f7f7f7; 
+            text-align: center;
+            padding: 100px 0;
+        }
+        .main-section h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+        .main-section p {
+            font-size: 1.5em;
+            max-width: 800px;
+            margin: 20px auto;
+        }
+        .main-section a {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 20px;
+            background-color: #007BFF; /* Bleu */
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        .main-section a:hover {
+            background-color: #0056b3; /* Bleu foncé pour le hover */
+        }
+        .centered-title {
+            text-align: center;
+        }
+
+        .vision-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Centre le titre et le contenu */
+            background-image: url('visionn.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: hwb(0 93% 4%); 
+            text-align: justify;
+        }
+
+
+
+        .vision-content {
+            align-items: start; /* Aligne le haut du texte avec le haut de l'image */
+            margin-top: 20px; /* Espacement entre le titre et le contenu */
+            text-align: justify;
+        }
+
+        .vision-content p {
+            flex: 1; /* Permet au texte de prendre tout l'espace disponible */
+            max-width: 60%; /* Limite la largeur du texte à 60% de la largeur du conteneur */
+        }
+
+        .vision-image {
+            max-width: 40%; /* Limite la largeur de l'image à 40% de la largeur du conteneur */
+            margin-left: 20px; /* Espacement entre le texte et l'image */
+        }
+        .platform-section {
+            background-image: url('saap.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            text-align: justify;
+            align-items: center;
+            color: hwb(0 95% 5%);
+            margin-top: 50px; /* Espacement entre le titre et le contenu */;
+        }
+         
+        .Footprint-section {
+            background-color: #062d57;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            text-align: center;
+            color:rgb(239, 234, 234);
+            font-size: 15px;
+            margin-top: 50px; /* Espacement entre le titre et le contenu */
+            
+        }
+        .team-content {
+            align-items: start; /* Aligne le haut du texte avec le haut de l'image */
+            margin-top: 50px; /* Espacement entre le titre et le contenu */
+            text-align: justify;
+        }   
+        .team-members {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap; /* Permet aux éléments de passer à la ligne suivante s'ils ne tiennent pas sur une seule ligne */
+
+        }
+
+        .team-member {
+            text-align: center;
+            margin: 0; /* Supprimer la marge par défaut */
+            flex: 1; /* Pour répartir l'espace également entre les membres */
+        }
+
+        .team-member img {
+            width: 150px; /* Largeur de l'image - à ajuster selon vos besoins */
+            height: auto; /* Conserve les proportions de l'image */
+            border-radius: 50%; /* Rend l'image circulaire */
+        }
+
+        .team-member p {
+            margin-top: 9px; /* Espacement entre l'image et le nom */
+        }
+        .team-section {
+            background-color: #083c72;
+            font-size: 12px;
+            text-align: justify;
+            background-size: cover; /* Ajuste l'image pour qu'elle couvre toute la section */
+            background-position: center; /* Centre l'image dans la section */
+            background-repeat: no-repeat; /* S'assure que l'image ne se répète pas */
+            color: hsl(0, 24%, 96%); /* Définit la couleur du texte en blanc, à ajuster si nécessaire */
+            padding: 50px 0; /* Ajoute du padding pour donner de l'espace autour du contenu */
+            font-size: 15px
+        }
+
+
+
+        .top-row {
+        margin-bottom: 20px; /* Espace entre les rangées */
+        }
+        img {
+            width: 800px;
+            height: 400px;
+        }
+
+
+
+
+    </style>
+        
+
+    </style>
+</head>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.jpeg" href="OceanLinx"  alt="OceanLinx Logo">
+        </div>
+        <nav>
+            <a href="#">About Us</a>
+            <a href="#">Services</a>
+            <a href="#">Support</a>
+            <a href="tracking.html">Tracking</a>
+            <a href="#">FAQ</a>
+        </nav>
+        <div class="buttons">
+            <a href="connexion.html">Sign In</a>
+            <a href="#">Register</a>
+        </div>   
+    </header>
+    <div class="main-section">
+        <h1>OceanLinx</h1>
+        <p>Navigating Trade, Connecting Shores</p>
+    </div>
+
+    <div class="hero">
+        <h1>OceanLinx: Navigating Trade, Connecting Shores</h1>
+        <p>Our online platform will serve as the global trade "operating system" of choice, beginning with the shipping industry. Join us in revolutionizing global shipping.</p>
+        <div class="cta-buttons">
+            <a href="#" class="learn-more">Learn More</a>
+        </div>
+    </div>
+
+    <div class="section vision-section">
+        <h2 class="centered-title">Our Vision</h2>
+        <div class="vision-content">
+            <p>Our vision is to revolutionize the global shipping industry, enabling efficient, secure, and sustainable trade. We will modernize global shipping for a smarter, stronger, and more resilient global economy.<br>
+                Since the dawn of time, trade has been essential to human civilization. The advent of container shipping was a watershed moment, unlocking significant economic value and benefits as the world globalized.<br>
+                Despite the evolution of global shipping, other industries have transformed through technology at a much faster pace. Information remains on paper and is exchanged using slow, manual methods, costing the industry over $30 billion annually. As a result, the global shipping industry struggles to keep up with the rising complexity of supply chains, markets, and economies.<br>
+                Our online platform will serve as the global trade "operating system" of choice, beginning with the shipping industry. By leveraging blockchain technology, our platform will enable trusted cooperation between diverse and competing market participants, resulting in increased efficiencies and resilience. 
+                </p>
+        </div>
+    </div>
+    
+
+    <div class="section platform-section">
+        <h2 class="centered-title">Our Platform</h2>
+        <p>OceanLinx is a comprehensive service platform designed to streamline and enhance maritime shipping operations connecting European countries, including the UK, Ireland, Spain, Portugal, and France, with their North American counterparts, the United States and Mexico. This platform acts as a crucial link between these regions, offering a range of shipping services to ensure efficient and cost-effective transportation across the Atlantic Ocean. <br>
+            OcenaLinx will allow businesses to compare quotes from multiple service providers, book their shipment, and track its progress in real time. We will also provide a variety of features to help businesses manage their shipments more effectively, such as the ability to upload shipping documents, generate invoices, and track their shipping budget. <br>
+            We believe that our platform can play a significant role in improving the efficiency and transparency of the sea freight shipping industry. We are committed to providing our customers with the best possible experience, and we are excited to help businesses grow their businesses through international trade.
+            </p>
+    </div>
+    
+    <div class="section Footprint-section">
+        <h2>Our Footprint</h2>
+            <div class="img"></div>
+            <img src="mapp.png" >
+    </div>
+
+    <div class="section team-section">
+        <h2 class="centered-title">Our Team</h2>
+        <p>We have a diverse team, with multicultural backgrounds, wide domain knowledge and multilingual skills (English, French, chinese and arabic). We are passionate about using new technologies to improve the shipping industry and make it more efficient and profitable.<br><br>
+            We are excited to work with all of you on this journey of transformation. We will explore and implement new technologies and ways of working together to solve the most difficult problems in the shipping industry.
+            </p>
+    
+        <div class="team-members top-row">
+            <div class="team-member">
+                <img src="Yasmine BENYOUBA.jpg" alt="Member 1">
+                <p>Yasmine BENYOUBA</p>
+            </div>
+            <div class="team-member">
+                <img src="R C.png" alt="Member 2">
+                <p>Chris</p>
+            </div>
+            <div class="team-member">
+                <img src="LU S.jpg" alt="Member 3">
+                <p>Member 3 Name</p>
+            </div>
+        </div>
+    
+        <div class="team-members bottom-row">
+            <div class="team-member">
+                <img src="LU Shangming.jpg" alt="Member 4">
+                <p>Member 4 Name</p>
+            </div>
+            <div class="team-member">
+                <img src="J J A.jpg" alt="Member 5">
+                <p>Member 5 Name</p>
+            </div>
+        </div>
+    </div>
+    
+    
+
+    <footer>
+        © 2023 OceanLinx. All rights reserved.
+    </footer>
+</body>
+</html>

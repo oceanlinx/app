@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OceanLinx Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+            color: #333;
+        }
+
+        header {
+            background-color: #185494;
+            padding: 10px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav a, .buttons a {
+            margin: 0 15px;
+            color: #fff; /* Changement de couleur en blanc */
+            text-decoration: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        .buttons a {
+            background-color: #888;
+            color: #fff; /* Garde la couleur du texte en blanc */
+            transition: background-color 0.3s;
+        }
+
+        .buttons a:hover {
+            background-color: #666;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 50px 5%;
+            background-color: #eee;
+        }
+
+        .hero h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.1em;
+            max-width: 600px;
+            margin: 20px auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .cta-buttons a {
+            padding: 10px 20px;
+            border-radius: 5px;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .learn-more {
+            background-color: #777;
+            transition: background-color 0.3s;
+        }
+
+        .sign-up {
+            background-color: #555;
+            transition: background-color 0.3s;
+        }
+
+        .learn-more:hover {
+            background-color: #666;
+        }
+
+        .sign-up:hover {
+            background-color: #444;
+        }
+
+        .section {
+            padding: 50px 5%;
+        }
+
+        .section h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .section p {
+            font-size: 1.1em;
+            max-width: 600px;
+            margin: 20px auto;
+        }
+
+        .image-placeholder {
+            width: 300px;
+            height: 200px;
+            background-color: #ccc;
+            margin: 20px auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .image-placeholder img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+        .logo img {
+            max-width: 150px;  /* Anciennement 150px, réduit pour être plus petit */
+            max-height: 50px; /* Anciennement 50px, réduit pour être plus petit */
+        }
+        .flex-container {
+            display: flex;  /* Transforme la div en conteneur flex */
+            justify-content: space-between;  /* Espace les éléments à l'intérieur du conteneur flex */
+            align-items: center;  /* Centre les éléments verticalement */
+        }
+
+        .content {
+             flex: 1;  /* Donne à l'élément un facteur de croissance flex de 1, ce qui lui permet de prendre de l'espace disponible */
+             padding-right: 20px;  /* Ajoute un peu d'espace à droite du contenu pour l'éloigner de l'image */
+        }
+
+        .image-placeholder {
+          flex: 1;  /* Donne à l'élément un facteur de croissance flex de 1, ce qui lui permet de prendre de l'espace disponible */
+         /* Vous pouvez ajuster la largeur ou ajouter d'autres styles si nécessaire */
+        }
+        .login-page {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5% 10%;
+            background-color: #f7f7f7;
+        }
+
+        .login-container, .welcome-container {
+            flex: 1;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 450px;
+        }
+
+        .login-container h2, .welcome-container h2 {
+            margin-bottom: 20px;
+        }
+
+        .login-container input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .login-container button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            background-color: #3578e5;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .login-container button:hover {
+            background-color: #3060c0;
+        }
+        body, html {
+            height: 100%; /* Hauteur totale du navigateur */
+        }
+
+        body {
+            display: flex; /* Pour utiliser les propriétés de flexbox */
+            flex-direction: column; /* Organise les éléments de manière verticale */
+        }
+
+        header, .login-page {
+            flex-shrink: 0; /* Empêche ces éléments de réduire leur taille pour s'adapter à la hauteur de la fenêtre */
+        }
+
+        .login-page {
+            flex-grow: 1; /* Permet à cette section de croître pour occuper tout l'espace disponible */
+        }
+
+        footer {
+            flex-shrink: 0; /* Empêche cet élément de réduire sa taille */
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <!-- Replace with your actual logo image file -->
+            <img src="logo.jpeg" alt="Logo OceanLinx"> <!-- Update with the correct path to your logo image -->
+            <span style="margin-left: 10px; font-size: 24px; font-weight: bold; vertical-align: middle;">OceanLinx</span>
+        </div>
+        <nav>
+            <!-- Update navigation links to reflect your platform's pages -->
+            <a href="#">About Us</a>
+            <a href="#">Services</a>
+            <a href="#">Support</a>
+            <a href="tracking.html">Tracking</a>
+            <a href="#">FAQ</a>
+        </nav>
+        <div class="buttons">
+            <!-- Keep or update the links as needed -->
+            <a href="connexion.html">Login</a>
+            <a href="register.html">Sign Up</a>
+        </div>
+    </header>
+
+    <div class="login-page">
+        <div class="welcome-container">
+            <h2>Welcome to OceanLinx</h2>
+            <p>Navigating Trade, Connecting Shores. Our online platform serves as the global trade "operating system" of choice, leveraging blockchain technology to enable trusted cooperation and increased efficiencies.</p>
+        </div>
+        <div class="login-container">
+            <h2>Login to Your Account</h2>
+            <form action="recherche.html" method="get">
+                <input type="email" name="email" placeholder="Email Address" required>
+                <input type="password" name="password" placeholder="Password" required>
+                <button type="submit">Login</button>
+            </form>            
+            <a href="#">Forgot Password?</a>
+        </div>        
+    </div>
+
+    <footer>
+        <!-- Update the year and company name as needed -->
+        © 2023 OceanLinx.
+    </footer>
+</body>
+</html>
